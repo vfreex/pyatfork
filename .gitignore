@@ -1,0 +1,11 @@
+*.pyc
+*.pyo
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.o
+*.so
+.*
+!.gitignore
+
