@@ -3,6 +3,20 @@ PyAtfork provides API to register fork handlers.
 
 PyAtfork is a wrapper for the POSIX Pthreads API [pthread_atfork(3)][]. I wrote this module because Python's [ctypes][] library cannot handle this function correctly. 
 
+## Installation
+
+### Install from Source Code
+
+``` sh
+sudo python ./setup.py install
+```
+
+### Install from PyPI
+
+``` sh
+sudo pip install pyatfork
+```
+
 ## Function prototype
 ### atfork(prepare=None, parent=None, child=None)
 Register fork handlers to the caller process. If an error occurs OSError is raised.
@@ -11,7 +25,7 @@ The order of calls to `pyatfork.atfork()` is significant. The `parent` and `chil
 order in which they were established by calls to `pyatfork.atfork()`. The `prepare` fork handlers shall be called in
 the opposite order.
 
-## Sample 
+## Usage 
 
 ``` python
 import os
