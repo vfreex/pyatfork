@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import os
 import sys
-from distutils.log import warn as printf
 from setuptools import setup, find_packages, Extension, Command
 
 setup(
@@ -11,8 +10,8 @@ setup(
     license='MIT',
     author='Rayson Zhu',
     author_email='vfreex@gmail.com',
-    packages = find_packages(),
     url='https://github.com/vfreex/pyatfork',
+    packages = find_packages(),
     ext_modules=[
         Extension(name='pyatfork.catfork',
             sources=['pyatfork/catfork_module/atfork.c',
@@ -20,9 +19,10 @@ setup(
             depends=['pyatfork/catfork_module/atfork.h'],
             ),
         ],
+    zip_safe = False,
+
     long_description="PyAtfork is a wrapper for the POSIX Pthreads API pthread_atfork(3). "
     "I wrote this module because Python's ctype library cannot handle this function correctly.",
-
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
